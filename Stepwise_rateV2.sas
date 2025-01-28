@@ -36,6 +36,7 @@ quit;
 
 data PREIPEDSMRGD;
 	merge ipeds.gradrates CharaPred AidPred TuitionUpdate SalPred;
+	if cmiss(of _all_) then delete;
 	by unitid;
 run;
 
